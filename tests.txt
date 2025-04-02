@@ -1,0 +1,44 @@
+Minimal Resources
+java Main --input-file orders.txt --available-ovens 1 --available-chefs 1 --available-drivers 1 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Increased Chefs
+java Main --input-file orders.txt --available-ovens 1 --available-chefs 2 --available-drivers 1 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Increased Ovens
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 1 --available-drivers 1 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Increased Drivers
+java Main --input-file orders.txt --available-ovens 1 --available-chefs 1 --available-drivers 2 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Balanced Resources
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Round Robin with Different Quantum
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 2
+
+Focused
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 3 --chef-time 2 --chef-strategy FOCUSED
+
+Focused vs Round Robin Comparison
+java Main --input-file orders.txt --available-ovens 3 --available-chefs 3 --available-drivers 3 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+java Main --input-file orders.txt --available-ovens 3 --available-chefs 3 --available-drivers 3 --bake-time 3 --chef-time 2 --chef-strategy FOCUSED
+
+Short Times
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 1 --chef-time 1 --chef-strategy FOCUSED
+
+Long Times
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 4 --chef-time 4 --chef-strategy RR --chef-quantum 1
+
+Varying Ratios (bake and chef times)
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 4 --chef-time 2 --chef-strategy FOCUSED
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 2 --chef-time 4 --chef-strategy FOCUSED
+
+Single Order (the command remains the same, change input_file)
+java Main --input-file orders.txt --available-ovens 1 --available-chefs 1 --available-drivers 1 --bake-time 3 --chef-time 2 --chef-strategy FOCUSED
+
+Multiple Orders (the command remains the same, change input_file)
+java Main --input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 3 --chef-time 2 --chef-strategy RR --chef-quantum 1
+
+Large Number of Orders (the command remains the same, change input_file)
+java Main --input-file orders.txt --available-ovens 3 --available-chefs 3 --available-drivers 3 --bake-time 4 --chef-time 3 --chef-strategy FOCUSED
+

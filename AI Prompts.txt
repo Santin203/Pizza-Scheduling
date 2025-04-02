@@ -1,0 +1,3 @@
+Give me the skeleton of the code per file (without any implementation) based on the attached diagram
+
+Generate a parsing method for commands provided to the cashier
