@@ -24,7 +24,7 @@
             "request": "launch",
             "mainClass": "Main",
             "projectName": "Pizza-Scheduling_26fb592e",
-            "args": "--input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 3 --chef-time 3 --chef-strategy FOCUSED"
+            "args": "--input-file orders.txt --available-ovens 2 --available-chefs 2 --available-drivers 2 --bake-time 9 --chef-time 4 --chef-strategy RR --chef-quantum 2"
         }
     ]
 }

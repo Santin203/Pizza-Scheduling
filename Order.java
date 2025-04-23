@@ -97,7 +97,7 @@ public class Order implements IOrder {
     }
 
     public void updateToDelivered() {
-        if (deliveryTime == 0) {
+        if (deliveryTime == 0 && state == OrderState.DRIVER_WAITING) {
             updateState(OrderState.DELIVERED);
         }
     }
