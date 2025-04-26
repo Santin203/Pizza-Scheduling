@@ -44,8 +44,17 @@ public class RoundRobinChefStrategy implements ISchedulerStrategy {
 
     private void checkChefTimeSpent(IChef chef) {
         ITask task = chef.getTask();
-        if (chef.getTimeSpent() >= quantum) {
-            if (((IPizza) task).getChefTimeRemaining() > 0) {
+
+        // FIX ===================================================
+        if (task == null) { // added check
+            return;
+        }
+        boolean taskCompleted = ((IPizza) task).getChefTimeRemaining() <= 0;
+        boolean timeQuantumReached = chef.getTimeSpent() >= quantum;
+
+        if (timeQuantumReached || taskCompleted) { // added condition
+            if (!taskCompleted && timeQuantumReached) { // added condition
+        // FIX ===================================================
                 taskQueue.add(task);
             }
             task.setAvailable(true);
@@ -64,8 +73,8 @@ public class RoundRobinChefStrategy implements ISchedulerStrategy {
 
     @Override
     public void updateDoneResources(IResource resource, ITask task) {
-        this.removeTask(task);
         execute(resource);
+        this.removeTask(task);
     }
 
     public ITask getNextTask() {
